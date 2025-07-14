@@ -1,29 +1,30 @@
-const formElem = document.querySelector(".login-form")
-console.log(formElem);
+const formElem = document.querySelector(".login-form");
 
 formElem.addEventListener('submit', (evt) => {
-    evt.preventDefault()
-    const UserData = {
-        email: formElem.email.value.trim(),
-        password: formElem.password.value.trim(),
-    }
-    console.log(UserData);
-    
-   if (UserData.email === "" || UserData.password === "") {
-  alert('All form fields must be filled in');
-  return;
-}
-    formElem.reset()
-})
+  evt.preventDefault();
+
+  const email = formElem.email.value.trim();
+  const password = formElem.password.value.trim();
+
+  if (email === "" || password === "") {
+    alert('All form fields must be filled in');
+    return;
+  }
+
+  const UserData = { email, password };
+  console.log(UserData);
+
+  formElem.reset();
+});
 
 
-
-// formElem.addEventListener('submit', e => {
+//  formElem.addEventListener('submit', e => {
 //     e.preventDefault();
 //     const formData = new FormData(formElem);
   
 //     if (formElem.email.value === "" || formElem.password.value === "") {
 //         alert('All form fields must be filled in');
+//         return
 //     }
   
 //     const userInfo = {
@@ -32,7 +33,6 @@ formElem.addEventListener('submit', (evt) => {
 //     }
 //     console.log(userInfo);
   
-//     formElem.reset()
-// })   
-
+//     formElem.reset();
+// } )  ;
 
